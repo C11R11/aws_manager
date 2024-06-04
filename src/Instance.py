@@ -30,6 +30,8 @@ class Instance:
         if self.GetInfo()['Reservations'][0]['Instances'][0]['InstanceType'] != self.askedInstanceType:
             self.__ChangeType()
             self.SyncInfo()
+        else:
+            print("No changes :(")
 
     def StartInstance(self):
         self.SyncInfo()
@@ -118,7 +120,7 @@ class Instance:
         return self.description   
 
     def GetInstanceType(self):
-        return self.currentInstanceType
+        return self.GetInfo()['Reservations'][0]['Instances'][0]['InstanceType'] 
     
     def GetState(self):
         return self.state
