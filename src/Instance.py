@@ -129,9 +129,3 @@ class Instance:
     def GetPublicIP(self):
         return self.publicIP
     
-
-if __name__ == '__main__':
-    instanceVulcanScripts = 'i-099dd0e3b02713553'
-    vulcanEc2 = Instance(instanceVulcanScripts, "aws_ssm_test.ini")
-    vulcanEc2.StartInstance()
-    print(vulcanEc2.GetInfo())
